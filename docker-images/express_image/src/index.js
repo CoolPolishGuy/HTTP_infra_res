@@ -26,19 +26,25 @@ MyRandom.prototype.mood = function () {
   var data;
   var tab = [];
   for(var i = 0 ; i < 3 ; i++ ) {
-  switch (this.integer(0, 4)) {
-    case 0: data = " Today i am been programming RES and it makes me very Happy. ";
-    case 1: data = " Today i was planning on studying it made me very Content. ";
-    case 2: data = " I don't like this course and it makes me very Sad. ";
-    case 3: data = " I don't like HEIG-VD , too much work ";
-    case 4: data = " Sir Liechti is very good professor ";
-  }
-    var words = ['Rock', 'Paper', 'Scissors'];
-    var word = words[Math.floor(Math.random() * words.length - 1)];
+    var aNumber = Math.floor(Math.random() * 5);
+    switch (aNumber) {
+      case 0: data = " Today i have been programming RES and it makes me very sad. ";
+        break;
+      case 1: data = " Today i was planning on studying it made me very angry. ";
+        break;
+      case 2: data = " I don t like this course and it makes me very happy ";
+        break;
+      case 3: data = " I don t like HEIG-VD , too much work ";
+        break;
+      case 4: data = " Sir Liechti is very good professor ";
 
-  var finalData = word +  data;
+    }
+    var words = ['Rock ', 'Paper ', 'Scissors '];
+    var word = words[Math.floor(Math.random() * 3 )];
+
+  var finalData = word + data;
   tab.push({finalData});
-}
+  }
 return tab;
 }
 var random = new MyRandom();
